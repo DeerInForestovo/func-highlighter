@@ -1,0 +1,65 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Func",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#functional"
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#variable"
+		}
+	],
+	"repository": {
+		"comment": {
+			"name": "comment",
+			"begin": "#",
+			"end": "$"
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.func",
+				"match": "\\b(defn|data|case|of)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.func",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.func",
+					"match": "\\\\."
+				}
+			]
+		},
+		"functional": {
+			"name": "entity.name.function",
+			"patterns": [
+				{
+					"name": "entity.name.function.functional",
+					"match": "(?<=\\b(defn))\\s*\\b([a-z][a-zA-Z_]*)\\b"
+				},
+				{
+					"name": "entity.name.function.functional",
+					"match": "(?<=\\b(data))\\s*\\b([A-Z][a-zA-Z_]*)\\b"
+				}
+			]
+		},
+		"variable": {
+			"patterns": [{
+				"name": "variable.name",
+				"match": "\\b[A-Z][a-zA-Z_]*\\b"
+			}]
+		}
+	},
+	"scopeName": "source.func"
+}
