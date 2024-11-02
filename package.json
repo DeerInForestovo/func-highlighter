@@ -6,9 +6,11 @@
   "engines": {
     "vscode": "^1.95.0"
   },
+  "icon": "icon.png",
   "categories": [
     "Programming Languages"
   ],
+  "publisher": "DeerInForest",
   "contributes": {
     "languages": [{
       "id": "func",
