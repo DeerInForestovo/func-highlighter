@@ -16,6 +16,9 @@
 		},
 		{
 			"include": "#variable"
+		},
+		{
+			"include": "#constant"
 		}
 	],
 	"repository": {
@@ -24,10 +27,16 @@
 			"begin": "#",
 			"end": "$"
 		},
+		"constant": {
+			"patterns": [{
+				"name": "constant.numeric",
+				"match": "\\b([0-9]*\\.[0-9]+([eE][-+]?[0-9]+)?)|([0-9]+)\\b"
+			}]
+		},
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.func",
-				"match": "\\b(defn|data|case|of)\\b"
+				"match": "\\b(defn|data|case|of|true|false|int|float|string|bool)\\b"
 			}]
 		},
 		"strings": {
