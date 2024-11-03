@@ -36,7 +36,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.func",
-				"match": "\\b(defn|data|case|of|true|false|int|float|string|bool)\\b"
+				"match": "\\b(defn|data|case|of|True|False|int|float|string|bool)\\b"
 			}]
 		},
 		"strings": {
