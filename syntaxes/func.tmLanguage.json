@@ -9,6 +9,9 @@
 			"include": "#strings"
 		},
 		{
+			"include": "#chars"
+		},
+		{
 			"include": "#functional"
 		},
 		{
@@ -28,16 +31,20 @@
 			"end": "$"
 		},
 		"constant": {
-			"patterns": [{
-				"name": "constant.numeric",
-				"match": "\\b([0-9]*.[0-9]+([eE][-+]?[0-9]+)?)|([0-9]+[eE][-+]?[0-9]+)|([0-9]+)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "constant.numeric",
+					"match": "\\b([0-9]*.[0-9]+([eE][-+]?[0-9]+)?)|([0-9]+[eE][-+]?[0-9]+)|([0-9]+)\\b"
+				}
+			]
 		},
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.func",
-				"match": "\\b(defn|data|case|of|True|False|int|float|string|bool)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.func",
+					"match": "\\b(defn|data|case|of|do|True|False|Int|Float|Char|Bool|List)\\b"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.func",
@@ -50,24 +57,38 @@
 				}
 			]
 		},
+		"chars": {
+			"patterns": [
+				{
+					"name": "constant.character",
+					"match": "'([^'\\\\])'"
+				},
+				{
+					"name": "constant.character.escape",
+					"match": "'\\\\([btnfr\"'\\\\]|[0-9a-fA-F]{1,3}|.)'"
+				}
+			]
+		},
 		"functional": {
 			"name": "entity.name.function",
 			"patterns": [
 				{
 					"name": "entity.name.function.functional",
-					"match": "(?<=\\b(defn))\\s*\\b([a-z][a-zA-Z_]*)\\b"
+					"match": "(?<=\\b(defn))\\s*\\b([a-z][a-zA-Z]*)\\b"
 				},
 				{
 					"name": "entity.name.function.functional",
-					"match": "(?<=\\b(data))\\s*\\b([A-Z][a-zA-Z_]*)\\b"
+					"match": "(?<=\\b(data))\\s*\\b([A-Z][a-zA-Z]*)\\b"
 				}
 			]
 		},
 		"variable": {
-			"patterns": [{
-				"name": "variable.name",
-				"match": "\\b[A-Z][a-zA-Z_]*\\b"
-			}]
+			"patterns": [
+				{
+					"name": "variable.name",
+					"match": "\\b[A-Z][a-zA-Z]*\\b"
+				}
+			]
 		}
 	},
 	"scopeName": "source.func"
