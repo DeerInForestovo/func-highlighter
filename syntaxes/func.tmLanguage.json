@@ -42,7 +42,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.func",
-					"match": "\\b(defn|data|case|of|do|return|True|False|Int|Float|Char|Bool|List|print|read|charToNum|numToChar|floatToNum|intToFloat)\\b"
+					"match": "\\b(defn|data|case|of|do|return|True|False|Int|Float|Char|Bool|List|print|read|charToNum|numToChar|floatToNum|intToFloat|array|size|access|modify)\\b"
 				}
 			]
 		},
